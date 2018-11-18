@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import AirFilterPage from "./AirFilterPage";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import {
   AIR_FILTER_WIDTHS,
