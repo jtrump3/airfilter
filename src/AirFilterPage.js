@@ -136,7 +136,7 @@ class AirFilterPage extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="dropdown w-100">
+                <div className="dropdown">
                     <div
                         onClick={this.toggleDropdowns.bind(this, "shortSide")}
                         className="btn w-100 input dropdown-btn font-weight-normal text-truncate text-left pt-2"
@@ -148,13 +148,13 @@ class AirFilterPage extends React.Component {
                         {this.returnShortSideTags()}
                     </div>
                 </div>
-                <div className="dropdown w-100">
+                <div className="dropdown">
                 {this.returnLongSideButton(this.state.shortSideSelected)}
                     <div className={`dropdown-content w-100 border ${this.state.dropdowns.longSide}`}>
                         {this.returnLongSideTags()}
                     </div>
                 </div>
-                <div className="dropdown w-100">
+                <div className="dropdown">
                 {this.returnThicknessButton(this.state.longSideSelected, this.state.shortSideSelected)}
                     <div className={`dropdown-content w-100 border ${this.state.dropdowns.thickness}`}>
                         {this.returnThicknessTags()}

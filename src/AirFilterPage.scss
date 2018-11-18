@@ -19,3 +19,23 @@
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block !important;}
+
+input,
+.input {
+  border-color: rgb(116, 186, 252) !important;
+  height: 2.65rem;
+  background-color: white;
+}
+input:focus,
+.input:focus,
+.input:focus-within {
+  border-color: rgb(0, 107, 208) !important;
+  background-color: white;
+}
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
