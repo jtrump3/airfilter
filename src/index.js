@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import AirFilterPage from "./AirFilterPage";
 
 import {
   AIR_FILTER_WIDTHS,
@@ -29,7 +30,9 @@ class Index extends React.Component{
     console.log(AIR_FILTER_THICKNESSES);
     console.log(GlobalConstants);
     return (
-    <div>Hello React!</div>
+      <div>
+        <AirFilterPage/>
+      </div>
     );
   }
 }
