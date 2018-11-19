@@ -11,9 +11,9 @@ class AirFilterPage extends React.Component {
         this.state = {
             dropdowns: {},
             frequency: "Every 6 Months",
-            shortSide: null,
-            longSide: null,
-            thickness: null,
+            shortSide: "in.",
+            longSide: "in.",
+            thickness: "in.",
             shortSideSelected: false,
             longSideSelected: false,
         };
@@ -32,10 +32,10 @@ class AirFilterPage extends React.Component {
             jsxTags.push(
                 <React.Fragment key={i}>
                     <a
-                        className="text-left text-trucate font-weight-normal btn bg-white"
+                        className="font-weight-normal btn bg-white"
                         onClick={this.handleChange.bind(this, "shortSide")}
                     >
-                        {AIR_FILTER_WIDTHS[i]}
+                        {AIR_FILTER_WIDTHS[i]}"
                     </a>
                 </React.Fragment>
             );
@@ -53,10 +53,10 @@ class AirFilterPage extends React.Component {
             jsxTags.push(
                 <React.Fragment key={i}>
                     <a
-                        className="text-left text-trucate font-weight-normal btn bg-white"
+                        className="font-weight-normal btn bg-white"
                         onClick={this.handleChange.bind(this, "longSide")}
                     >
-                        {AIR_FILTER_HEIGHTS[i]}
+                        {AIR_FILTER_HEIGHTS[i]}"
                     </a>
                 </React.Fragment>
             );
@@ -74,10 +74,10 @@ class AirFilterPage extends React.Component {
             jsxTags.push(
                 <React.Fragment key={i}>
                     <a
-                        className="text-left text-trucate font-weight-normal btn bg-white"
+                        className="font-weight-normal btn bg-white"
                         onClick={this.handleChange.bind(this, "thickness")}
                     >
-                        {AIR_FILTER_THICKNESSES[i]}
+                        {AIR_FILTER_THICKNESSES[i]}"
                     </a>
                 </React.Fragment>
             );
@@ -94,19 +94,19 @@ class AirFilterPage extends React.Component {
             return (
                 <div
                     onClick={this.toggleDropdowns.bind(this, "longSide")}
-                    className="btn w-100 input dropdown-btn font-weight-normal text-truncate text-left pt-2"
+                    className="btn w-100 input dropdown-btn pt-2 text-primary font-weight-bold bg-white border-primary"
                 >
-                    Long side ({this.state.longSide})
-                        <span className="dropdown-toggle text-primary float-right" />
+                    <span className="h3">Long side ({this.state.longSide})</span>
+                    <span className="dropdown-toggle float-right" />
                 </div>
             );
         }
         return (
             <div
-                className="btn w-100 input dropdown-btn font-weight-normal text-truncate text-left pt-2"
+                className="btn w-100 input dropdown-btn pt-2 text-primary font-weight-bold bg-white border-primary"
             >
-                Long side ({this.state.longSide})
-                        <span className="dropdown-toggle text-primary float-right" />
+                <span className="h3">Long side ({this.state.longSide})</span>
+                <span className="dropdown-toggle  float-right" />
             </div>
         );
     }
@@ -115,49 +115,62 @@ class AirFilterPage extends React.Component {
         if(shortSide && longSide) {
             return (
                  <div
-                        onClick={this.toggleDropdowns.bind(this, "thickness")}
-                        className="btn w-100 input dropdown-btn font-weight-normal text-truncate text-left pt-2"
-                    >
-                        Thickness ({this.state.thickness})
-                        <span className="dropdown-toggle text-primary float-right" />
-                    </div>
+                    onClick={this.toggleDropdowns.bind(this, "thickness")}
+                    className="btn w-100 input dropdown-btn text-primary font-weight-bold bg-white border-primary"
+                >
+                    <span className="h3">Thickness ({this.state.thickness})</span>
+                    <span className="dropdown-toggle float-right" />
+                </div>
             );
         }
         return (
-             <div
-                        className="btn w-100 input dropdown-btn font-weight-normal text-truncate text-left pt-2"
-                    >
-                        Thickness ({this.state.thickness})
-                        <span className="dropdown-toggle text-primary float-right" />
-                    </div>
+            <div
+                className="btn w-100 input dropdown-btn text-primary font-weight-bold bg-white border-primary"
+            >
+                <span className="h3">Thickness ({this.state.thickness})</span>
+                <span className="dropdown-toggle float-right" />
+            </div>
         );
     }
 
     render() {
         return (
-            <div className="row">
-                <div className="dropdown">
-                    <div
-                        onClick={this.toggleDropdowns.bind(this, "shortSide")}
-                        className="btn w-100 input dropdown-btn font-weight-normal text-truncate text-left pt-2"
-                    >
-                        Short side ({this.state.shortSide})
-                        <span className="dropdown-toggle text-primary float-right" />
+            <div>
+                <h1 className="text-center my-5 py-3">
+                    Find the right HVAC air filter <br/>for your furnace or air conditioner
+                </h1>
+                <div className="jumbotron py-3 mx-auto col-10">
+                    <div className="h3 mt-2 text-center font-weight-normal">
+                        Select all three dimensions to find the right filter. You can find them on your current filter.
                     </div>
-                    <div className={`dropdown-content w-100 border ${this.state.dropdowns.shortSide}`}>
-                        {this.returnShortSideTags()}
-                    </div>
-                </div>
-                <div className="dropdown">
-                {this.returnLongSideButton(this.state.shortSideSelected)}
-                    <div className={`dropdown-content w-100 border ${this.state.dropdowns.longSide}`}>
-                        {this.returnLongSideTags()}
-                    </div>
-                </div>
-                <div className="dropdown">
-                {this.returnThicknessButton(this.state.longSideSelected, this.state.shortSideSelected)}
-                    <div className={`dropdown-content w-100 border ${this.state.dropdowns.thickness}`}>
-                        {this.returnThicknessTags()}
+                    <div className="row">
+                        <div className="dropdown px-0 mx-5 col">
+                            <div className="h4 text-center text-muted font-weight-normal">Step 1</div>
+                            <div
+                                onClick={this.toggleDropdowns.bind(this, "shortSide")}
+                                className="btn w-100 input dropdown-btn text-primary font-weight-bold bg-white border-primary"
+                            >
+                                <span className="h3">Short side ({this.state.shortSide})</span>
+                                <span className="dropdown-toggle  float-right" />
+                            </div>
+                            <div className={`dropdown-content w-100 border ${this.state.dropdowns.shortSide}`}>
+                                {this.returnShortSideTags()}
+                            </div>
+                        </div>
+                        <div className="dropdown px-0 mx-5 col">
+                            <div className="h4 text-center text-muted font-weight-normal">Step 2</div>
+                            {this.returnLongSideButton(this.state.shortSideSelected)}
+                            <div className={`dropdown-content w-100 border ${this.state.dropdowns.longSide}`}>
+                                {this.returnLongSideTags()}
+                            </div>
+                        </div>
+                        <div className="dropdown px-0 mx-5 col">
+                        <div className="h4 text-center text-muted font-weight-normal">Step 3</div>
+                            {this.returnThicknessButton(this.state.longSideSelected, this.state.shortSideSelected)}
+                            <div className={`dropdown-content w-100 border ${this.state.dropdowns.thickness}`}>
+                                {this.returnThicknessTags()}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
