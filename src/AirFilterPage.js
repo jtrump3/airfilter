@@ -203,7 +203,9 @@ class AirFilterPage extends React.Component {
                             Dirty air filters also make your HVAC system work harder to move air, which raises energy bills and shortens the system's life.
                             <div className="my-4"/>
                             Save energy and improve air quality with replacement furnace filters and air conditioner filters from Sears PartsDirect.
-                            Check your owner's manual or enter in your filter's dimensions to find the right air filter for your furnace or AC unit.
+                            Sears PartsDirect has top air filters brands such as BMC, Air Flow, and DuPont, at great prices.
+                            <div className="my-4"/>
+                            Check your owner's manual or enter in you filter dimensions to find the right air filter for your furnace or AC unit.
                         </div>
                     </div>
                     <div className="col-6 px-5 mt-5">
