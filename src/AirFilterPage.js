@@ -260,7 +260,21 @@ class AirFilterPage extends React.Component {
     returnBestFilters(){
         if (true) {
             return(
-                <div className="border mx-5 py-3">
+                <div className="border mx-5 pb-3 air-filter-list-container mb-4">
+                    <div className="h1 pl-4">
+                        Best filters (7)
+                    </div>
+                    <div className="row ml-1 mb-4">
+                        <div className="col text-muted">
+                            <span className="font-weight-bold mr-2">MERV ratings</span>range from 13 to 16<br/>
+                            <span className="font-weight-bold mr-2">Removes</span>at least 90% or airborne contaminants 1 micron or 
+                            larger and from less than 75% to at least 95% of airborne contaminants from 0.3 to 1 micron
+                        </div>
+                        <div className="col">
+                            These filters trap as small as bacteria and tobacco smoke, as well as dust and particles the size of 
+                            aerosol spray drops and mold spores
+                        </div>
+                    </div>
                     <AirFilterList />
                 </div>
             )
@@ -269,8 +283,22 @@ class AirFilterPage extends React.Component {
     returnBetterFilters(){
         if (true) {
             return(
-                <div>
-
+                <div className="border mx-5 pb-3 air-filter-list-container mb-4">
+                    <div className="h1 pl-4">
+                        Better filters (7)
+                    </div>
+                    <div className="row ml-1 mb-4">
+                        <div className="col text-muted">
+                            <span className="font-weight-bold mr-2">MERV ratings</span>range from 9 to 12<br/>
+                            <span className="font-weight-bold mr-2">Removes</span>from less than 50%  up to 80% of airborne contaminants
+                            1 micron or larger
+                        </div>
+                        <div className="col">
+                            These filters trap as small as bacteria and tobacco smoke, as well as dust and particles the size of 
+                            aerosol spray drops and mold spores
+                        </div>
+                    </div>
+                    <AirFilterList />
                 </div>
             )
         }
@@ -278,8 +306,20 @@ class AirFilterPage extends React.Component {
     returnGoodFilters(){
         if (true) {
             return(
-                <div>
-
+                <div className="border mx-5 pb-3 air-filter-list-container mb-4">
+                    <div className="h1 pl-4">
+                        Good filters (7)
+                    </div>
+                    <div className="row ml-1 mb-4">
+                        <div className="col text-muted">
+                            <span className="font-weight-bold mr-2">MERV ratings</span>range from 5 to 8<br/>
+                            <span className="font-weight-bold mr-2">Removes</span>20% to 85% of airborne contaminants from 3 to 10 microns.
+                        </div>
+                        <div className="col">
+                            These filters trap particles the size of aerosol spray drops and mold spores
+                        </div>
+                    </div>
+                    <AirFilterList />
                 </div>
             )
         }
@@ -294,8 +334,14 @@ class AirFilterPage extends React.Component {
                     <div className="d-flex justify-content-center" >
                         <span className="h2 text-primary bg-white font-weight-normal mt-1" onClick={this.startOver.bind(this)}>Start over</span>
                     </div>
-                    <div>
+                    <div className="mb-5">
                         {this.returnBestFilters()}
+                    </div>
+                    <div className="mb-5">
+                        {this.returnBetterFilters()}
+                    </div>
+                    <div className="mb-5">
+                        {this.returnGoodFilters()}
                     </div>
                 </React.Fragment>
             )
