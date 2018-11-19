@@ -19,7 +19,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 	      },
 	      {
 	        test: /\.(scss|css)$/,
-	        use: ["style-loader", "css-loader"]
+	        use: ["style-loader", "css-loader", "sass-loader"]
 	      }
 	    ]
 	  },
