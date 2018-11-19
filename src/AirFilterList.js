@@ -45,19 +45,24 @@ class AirFilterList extends React.Component {
                             Part #1234
                         </div>
                         <div className="row">
-                            <div className="col-9">
-                                <label className="radio-container">
-                                    <input type="radio" name="radio"/>
-                                    <span className="checkmark mt-3"></span>
-                                    <span className="ml-2 font-weight-bold h2">$59.96</span>
-                                    <span className="h4 font-weight-normal ml-2">(4-pack)</span>
-                                </label>
-                                <label className="radio-container mt-4">
-                                    <input type="radio" name="radio"/>
-                                    <span className="checkmark mt-3"></span>
-                                    <span className="ml-2 font-weight-bold h2">$179.88</span>
-                                    <span className="h4 font-weight-normal ml-2">(12-pack)</span>
-                                </label>
+                            <div className="col-9 mb-3">
+                                <div>
+                                    <label className="price-radios">
+                                        <input type="radio" className="mb-2" name="radios"/>
+                                        <span className="price-radios__checked mt-1">&#9673;</span>
+                                        <span className="price-radios__not-checked mt-1">&#9711;</span>
+                                        <span className="ml-2 font-weight-bold h2">$59.96</span>
+                                        <span className="h4 font-weight-normal ml-2">(4-pack)</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label className="price-radios">
+                                        <input type="radio" name="radios"/>
+                                        <span className="price-radios__checked mt-4 py-4">&#9673;</span>
+                                        <span className="price-radios__not-checked mt-4 py-4">&#9711;</span>
+                                        <span className="ml-2 font-weight-bold h2">$179.88</span>
+                                        <span className="h4 font-weight-normal ml-2">(12-pack)</span>                                    </label>
+                                </div>
                             </div>
                             <div className="col-3 px-0 row align-items-end ">
                                 <span className="col pr-2 mt-1 d-flex justify-content-end">Qty</span>
