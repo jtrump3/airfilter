@@ -192,12 +192,12 @@ class AirFilterPage extends React.Component {
                     Top air filter brands
                 </div>
                 <div className="d-flex justify-content-center my-4">
-                    <img className="mx-2 brand-image__stupid" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand1.png"/>
-                    <img className="mx-2 brand-image" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand3.png"/>
-                    <img className="mx-2 brand-image" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand4.png"/>
+                    <img alt="Arm & Hammer logo" className="mx-2 brand-image__stupid" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand1.png"/>
+                    <img alt="Febreze logo" className="mx-2 brand-image" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand3.png"/>
+                    <img alt="Accumulair logo" className="mx-2 brand-image" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand4.png"/>
                 </div>
                 <h1 className="pl-5 ml-5 display-4 font-weight-normal">A clean air filter makes a difference</h1>
-                <div className="row px-5">
+                <div className="row px-5"> 
                     <div className="col-6">
                         <div className="h3 text-muted px-5 font-weight-normal">
                             Dirty air filters leave particles like dust, mites, pollen, and pet dander in the air, which reduces air quality in your home.
@@ -210,7 +210,7 @@ class AirFilterPage extends React.Component {
                         </div>
                     </div>
                     <div className="col-6 px-5 mt-5">
-                        <img className="w-100" src="https://2qaayg3yvidcn9imquz625sg-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/home-air-purifier.jpg"/>
+                        <img alt="" className="w-100" src="https://2qaayg3yvidcn9imquz625sg-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/home-air-purifier.jpg"/>
                     </div>
                 </div>
             </div>
@@ -257,31 +257,7 @@ class AirFilterPage extends React.Component {
             })
         }
     }
-    renderList() {
-        if(this.state.thicknessSelected){
-            return(
-                <div>
-                    <button onClick={this.startOver.bind(this)}>Start over</button>
-                    Filter List
-                </div>
-            )
-        }
-        return (
-            <React.Fragment>
-                <div className="d-flex justify-content-center">
-                    <img src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/airFilterDimension.png"/>
-                </div>
-                <div className="h4 font-weight-normal d-flex justify-content-center py-4 row">
-                    <div className="mt-1 mr-2" style={{height: "25px", width: "25px"}}>
-                        <InfoCircle />
-                    </div>
-                    Your air filter's actual dimensions might differ slightly from those printed on the filter. 
-                    <br/>
-                    Order the size that's printed on the filter.
-                </div>
-            </React.Fragment>
-        )
-    }
+    
     returnBestFilters(){
         if (true) {
             return(
@@ -326,11 +302,11 @@ class AirFilterPage extends React.Component {
         return (
             <React.Fragment>
                 <div className="d-flex justify-content-center">
-                    <img src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/airFilterDimension.png"/>
+                    <img alt="Three air filters displaying length, height, and width" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/airFilterDimension.png"/>
                 </div>
                 <div className="h4 font-weight-normal d-flex justify-content-center py-4 row">
-                    <div className="mt-1 mr-2" style={{height: "25px", width: "25px"}}>
-                        <InfoCircle />
+                    <div className="mt-1 mr-2">
+                        <InfoCircle width="25px" height="25px" fill="blue"/>
                     </div>
                     Your air filter's actual dimensions might differ slightly from those printed on the filter. 
                     <br/>
