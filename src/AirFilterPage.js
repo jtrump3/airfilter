@@ -151,7 +151,7 @@ class AirFilterPage extends React.Component {
                 <h1 className="text-center my-5 py-3 display-3 font-weight-normal">
                     Find the right HVAC air filter <br/>for your furnace or air conditioner
                 </h1>
-                <div className="border mx-auto col-10 px-0">
+                <div className="border mx-auto col-11 px-0">
                     <div className="jumbotron py-3">
                         <div className="h3 mt-2 text-center font-weight-normal">
                             Select all three dimensions to find the right filter. You can find them on your current filter.
@@ -257,11 +257,12 @@ class AirFilterPage extends React.Component {
             })
         }
     }
-    
     returnBestFilters(){
         if (true) {
             return(
-                <AirFilterList />
+                <div className="border mx-5 py-3">
+                    <AirFilterList />
+                </div>
             )
         }
     }
@@ -290,8 +291,8 @@ class AirFilterPage extends React.Component {
                     <div className="display-4 font-weight-normal d-flex justify-content-center">
                         We found 11 results for <span className="font-weight-bold ml-3">{this.state.shortSide} x {this.state.longSide} x {this.state.thickness}</span>
                     </div>
-                    <div className="btn bg-light text-primary d-flex justify-content-center" onClick={this.startOver.bind(this)}>
-                        <span className="h2 font-weight-normal mt-1">Start over</span>
+                    <div className="d-flex justify-content-center" >
+                        <span className="h2 text-primary bg-white font-weight-normal mt-1" onClick={this.startOver.bind(this)}>Start over</span>
                     </div>
                     <div>
                         {this.returnBestFilters()}
