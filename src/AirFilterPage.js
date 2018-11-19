@@ -226,19 +226,33 @@ class AirFilterPage extends React.Component {
         if (!event.target.value) {
             value = event.target.innerText;
         }
-        this.setState({ [field]: value }, () => {
+        if(field === "shortSide" && this.state.shortSide !== value) {
             this.setState({
-                shortSideSelected: (this.state.shortSide !== "in."),
-            }, () => {
-                this.setState({
-                    longSideSelected: (this.state.shortSideSelected && this.state.longSide !== "in.")
-                }, () =>{
-                    this.setState({
-                        thicknessSelected: (this.state.longSideSelected && this.state.thickness !== "in.")
-                    })
-                })
-            });
-        });
+                [field]: value,
+                shortSideSelected: true,
+                longSideSelected: false,
+                longSide: "in.",
+                thicknessSelected: false,
+                thickness: "in.",
+            })
+        }
+        if(field === "longSide" && this.state.longSide !== value) {
+            this.setState({
+                [field]: value,
+                shortSideSelected: true,
+                longSideSelected: true,
+                thicknessSelected: false,
+                thickness: "in.",
+            })
+        }
+        if(field === "thickness" && this.state.thickness !== value) {
+            this.setState({
+                [field]: value,
+                shortSideSelected: true,
+                longSideSelected: true,
+                thicknessSelected: true,
+            })
+        }
     }
     renderList() {
         if(this.state.thicknessSelected){
