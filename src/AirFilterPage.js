@@ -18,6 +18,15 @@ class AirFilterPage extends React.Component {
             longSideSelected: false,
         };
     }
+    startOver(){
+        this.setState({
+            shortSideSelected: false,
+            longSideSelected: false,
+            shortSide: "in.",
+            longSide: "in.",
+            thickness: "in.",
+        });
+      }
     componentDidMount() {
         window.onclick = (event) => {
             this.setState({
@@ -173,6 +182,8 @@ class AirFilterPage extends React.Component {
                         </div>
                     </div>
                 </div>
+                <hr />
+                <button onClick={this.startOver.bind(this)}>Start over</button>
             </div>
         );
     }
