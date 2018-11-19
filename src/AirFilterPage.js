@@ -5,6 +5,8 @@ import {
     AIR_FILTER_THICKNESSES,
     AIR_FILTER_WIDTHS
 } from "./MockData"
+import InfoCircle from "./InfoCircle";
+
 class AirFilterPage extends React.Component {
     constructor(props) {
         super(props);
@@ -184,6 +186,9 @@ class AirFilterPage extends React.Component {
                 </div>
                 <hr />
                 <button onClick={this.startOver.bind(this)}>Start over</button>
+                <div style={{height: "20px", width: "20px"}}>
+                    <InfoCircle />
+                </div>
             </div>
         );
     }
