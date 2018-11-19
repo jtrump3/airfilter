@@ -6,6 +6,7 @@ import {
     AIR_FILTER_WIDTHS
 } from "./MockData"
 import InfoCircle from "./InfoCircle";
+import AirFilterList from "./AirFilterList";
 
 class AirFilterPage extends React.Component {
     constructor(props) {
@@ -105,7 +106,7 @@ class AirFilterPage extends React.Component {
             return (
                 <div
                     onClick={this.toggleDropdowns.bind(this, "longSide")}
-                    className="btn w-100 pt-2 text-primary font-weight-bold bg-white border-primary"
+                    className="btn w-100 py-2 text-primary font-weight-bold bg-white border-primary"
                 >
                     <span className="h3">Long side ({this.state.longSide})</span>
                     <span className="dropdown-toggle float-right" />
@@ -114,7 +115,7 @@ class AirFilterPage extends React.Component {
         }
         return (
             <div
-                className="btn w-100 pt-2 text-primary font-weight-bold bg-white border-primary"
+                className="btn w-100 py-2 text-primary font-weight-bold bg-white border-primary"
             >
                 <span className="h3">Long side ({this.state.longSide})</span>
                 <span className="dropdown-toggle  float-right" />
@@ -127,7 +128,7 @@ class AirFilterPage extends React.Component {
             return (
                  <div
                     onClick={this.toggleDropdowns.bind(this, "thickness")}
-                    className="btn w-100  text-primary font-weight-bold bg-white border-primary"
+                    className="btn w-100 py-2 text-primary font-weight-bold bg-white border-primary"
                 >
                     <span className="h3">Thickness ({this.state.thickness})</span>
                     <span className="dropdown-toggle float-right" />
@@ -136,7 +137,7 @@ class AirFilterPage extends React.Component {
         }
         return (
             <div
-                className="btn w-100 input dropdown-btn text-primary font-weight-bold bg-white border-primary"
+                className="btn w-100 py-2 text-primary font-weight-bold bg-white border-primary"
             >
                 <span className="h3">Thickness ({this.state.thickness})</span>
                 <span className="dropdown-toggle float-right" />
@@ -160,7 +161,7 @@ class AirFilterPage extends React.Component {
                                 <div className="h4 text-center text-muted font-weight-normal">Step 1</div>
                                 <div
                                     onClick={this.toggleDropdowns.bind(this, "shortSide")}
-                                    className="btn w-100 input dropdown-btn text-primary font-weight-bold bg-white border-primary"
+                                    className="btn w-100 py-2 text-primary font-weight-bold bg-white border-primary"
                                 >
                                     <span className="h3">Short side ({this.state.shortSide})</span>
                                     <span className="dropdown-toggle  float-right" />
@@ -185,7 +186,7 @@ class AirFilterPage extends React.Component {
                             </div>
                         </div>
                     </div>
-                    {this.renderList()}
+                    {this.returnList()}
                 </div>
                 <div className="font-weight-bold h3 d-flex justify-content-center">
                     Top air filter brands
@@ -263,6 +264,63 @@ class AirFilterPage extends React.Component {
                     <button onClick={this.startOver.bind(this)}>Start over</button>
                     Filter List
                 </div>
+            )
+        }
+        return (
+            <React.Fragment>
+                <div className="d-flex justify-content-center">
+                    <img src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/airFilterDimension.png"/>
+                </div>
+                <div className="h4 font-weight-normal d-flex justify-content-center py-4 row">
+                    <div className="mt-1 mr-2" style={{height: "25px", width: "25px"}}>
+                        <InfoCircle />
+                    </div>
+                    Your air filter's actual dimensions might differ slightly from those printed on the filter. 
+                    <br/>
+                    Order the size that's printed on the filter.
+                </div>
+            </React.Fragment>
+        )
+    }
+    returnBestFilters(){
+        if (true) {
+            return(
+                <AirFilterList />
+            )
+        }
+    }
+    returnBetterFilters(){
+        if (true) {
+            return(
+                <div>
+
+                </div>
+            )
+        }
+    }
+    returnGoodFilters(){
+        if (true) {
+            return(
+                <div>
+
+                </div>
+            )
+        }
+    }
+    returnList() {
+        if(true){
+            return(
+                <React.Fragment>
+                    <div className="display-4 font-weight-normal d-flex justify-content-center">
+                        We found 11 results for <span className="font-weight-bold ml-3">{this.state.shortSide} x {this.state.longSide} x {this.state.thickness}</span>
+                    </div>
+                    <div className="btn bg-light text-primary d-flex justify-content-center" onClick={this.startOver.bind(this)}>
+                        <span className="h2 font-weight-normal mt-1">Start over</span>
+                    </div>
+                    <div>
+                        {this.returnBestFilters()}
+                    </div>
+                </React.Fragment>
             )
         }
         return (
