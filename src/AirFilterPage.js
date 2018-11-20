@@ -21,7 +21,7 @@ class AirFilterPage extends React.Component {
             thicknessSelected: false,
         };
     }
-    startOver(){
+    startOver() {
         this.setState({
             shortSideSelected: false,
             longSideSelected: false,
@@ -49,7 +49,7 @@ class AirFilterPage extends React.Component {
                     >
                         {AIR_FILTER_WIDTHS[i]}"
                     </a>
-                </React.Fragment>
+                </React.Fragment>,
             );
         }
         return (
@@ -70,7 +70,7 @@ class AirFilterPage extends React.Component {
                     >
                         {AIR_FILTER_HEIGHTS[i]}"
                     </a>
-                </React.Fragment>
+                </React.Fragment>,
             );
         }
         return (
@@ -91,7 +91,7 @@ class AirFilterPage extends React.Component {
                     >
                         {AIR_FILTER_THICKNESSES[i]}"
                     </a>
-                </React.Fragment>
+                </React.Fragment>,
             );
         }
         return (
@@ -123,16 +123,16 @@ class AirFilterPage extends React.Component {
         );
     }
 
-    returnThicknessButton(shortSide, longSide){
-        if(shortSide && longSide) {
+    returnThicknessButton(shortSide, longSide) {
+        if (shortSide && longSide) {
             return (
-                 <div
-                    onClick={this.toggleDropdowns.bind(this, "thickness")}
-                    className="btn w-100 py-2 text-primary font-weight-bold bg-white border-primary"
-                >
-                    <span className="h3">Thickness ({this.state.thickness})</span>
-                    <span className="dropdown-toggle float-right" />
-                </div>
+              <div
+                onClick={this.toggleDropdowns.bind(this, "thickness")}
+                className="btn w-100 py-2 text-primary font-weight-bold bg-white border-primary"
+              >
+                <span className="h3">Thickness ({this.state.thickness})</span>
+                <span className="dropdown-toggle float-right" />
+              </div>
             );
         }
         return (
@@ -154,7 +154,8 @@ class AirFilterPage extends React.Component {
                 <div className="border mx-auto col-11 px-0">
                     <div className="jumbotron py-3">
                         <div className="h3 mt-2 text-center font-weight-normal">
-                            Select all three dimensions to find the right filter. You can find them on your current filter.
+                            {"Select all three dimensions to find the right filter."}
+                            {" You can find them on your current filter."}
                         </div>
                         <div className="row">
                             <div className="dropdown px-0 mx-5 col">
@@ -192,25 +193,58 @@ class AirFilterPage extends React.Component {
                     Top air filter brands
                 </div>
                 <div className="d-flex justify-content-center my-4">
-                    <img alt="Arm & Hammer logo" className="mx-2 brand-image__stupid" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand1.png"/>
-                    <img alt="Febreze logo" className="mx-2 brand-image" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand3.png"/>
-                    <img alt="Accumulair logo" className="mx-2 brand-image" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/brands/png/afBrand4.png"/>
+                    <img
+                      alt="Arm & Hammer logo"
+                      className="mx-2 brand-image__stupid"
+                      src={
+                        "https://www.searspartsdirect.com/etc/designs/" +
+                        "searspartsdirect/clientlib_base/img/brands/png/afBrand1.png"
+                      }
+                    />
+                    <img
+                      alt="Febreze logo"
+                      className="mx-2 brand-image"
+                      src={
+                        "https://www.searspartsdirect.com/etc/designs/" +
+                        "searspartsdirect/clientlib_base/img/brands/png/afBrand3.png"
+                      }
+                    />
+                    <img
+                      alt="Accumulair logo"
+                      className="mx-2 brand-image"
+                      src={
+                        "https://www.searspartsdirect.com/etc/designs/" +
+                        "searspartsdirect/clientlib_base/img/brands/png/afBrand4.png"
+                      }
+                    />
                 </div>
                 <h1 className="pl-5 ml-5 display-4 font-weight-normal">A clean air filter makes a difference</h1>
-                <div className="row px-5"> 
+                <div className="row px-5">
                     <div className="col-6">
                         <div className="h3 text-muted px-5 font-weight-normal">
-                            Dirty air filters leave particles like dust, mites, pollen, and pet dander in the air, which reduces air quality in your home.
-                            Dirty air filters also make your HVAC system work harder to move air, which raises energy bills and shortens the system's life.
+                            {"Dirty air filters leave particles like dust, mites, pollen, and pet dander in the air,"}
+                            {" which reduces air quality in your home."}
+                            {"Dirty air filters also make your HVAC system work harder to move air"}
+                            {", which raises energy bills and shortens the system's life."}
                             <div className="my-4"/>
-                            Save energy and improve air quality with replacement furnace filters and air conditioner filters from Sears PartsDirect.
-                            Sears PartsDirect has top air filters brands such as BMC, Air Flow, and DuPont, at great prices.
+                            {"Save energy and improve air quality with replacement furnace filters"}
+                            {" and air conditioner filters from Sears PartsDirect."}
+                            {"Sears PartsDirect has top air filters brands such as BMC,"}
+                            {" Air Flow, and DuPont, at great prices."}
                             <div className="my-4"/>
-                            Check your owner's manual or enter in you filter dimensions to find the right air filter for your furnace or AC unit.
+                            {"Check your owner's manual or enter in you filter dimensions to"}
+                            {" find the right air filter for your furnace or AC unit."}
                         </div>
                     </div>
                     <div className="col-6 px-5 mt-5">
-                        <img alt="" className="w-100" src="https://2qaayg3yvidcn9imquz625sg-wpengine.netdna-ssl.com/wp-content/uploads/2015/01/home-air-purifier.jpg"/>
+                        <img
+                          alt=""
+                          className="w-100"
+                          src={
+                            "https://2qaayg3yvidcn9imquz625sg-wpengine.netdna-ssl.com/" +
+                            "wp-content/uploads/2015/01/home-air-purifier.jpg"
+                          }
+                        />
                     </div>
                 </div>
             </div>
@@ -229,7 +263,7 @@ class AirFilterPage extends React.Component {
         if (!event.target.value) {
             value = event.target.innerText;
         }
-        if(field === "shortSide" && this.state.shortSide !== value) {
+        if (field === "shortSide" && this.state.shortSide !== value) {
             this.setState({
                 [field]: value,
                 shortSideSelected: true,
@@ -237,27 +271,27 @@ class AirFilterPage extends React.Component {
                 longSide: "in.",
                 thicknessSelected: false,
                 thickness: "in.",
-            })
+            });
         }
-        if(field === "longSide" && this.state.longSide !== value) {
+        if (field === "longSide" && this.state.longSide !== value) {
             this.setState({
                 [field]: value,
                 shortSideSelected: true,
                 longSideSelected: true,
                 thicknessSelected: false,
                 thickness: "in.",
-            })
+            });
         }
-        if(field === "thickness" && this.state.thickness !== value) {
+        if (field === "thickness" && this.state.thickness !== value) {
             this.setState({
                 [field]: value,
                 shortSideSelected: true,
                 longSideSelected: true,
                 thicknessSelected: true,
-            })
+            });
         }
     }
-    returnBestFilters(){
+    returnBestFilters() {
         if (true) {
             return(
                 <div className="border mx-5 pb-3 air-filter-list-container mb-4">
@@ -267,20 +301,22 @@ class AirFilterPage extends React.Component {
                     <div className="row ml-1 mb-4">
                         <div className="col text-muted">
                             <span className="font-weight-bold mr-2">MERV ratings</span>range from 13 to 16<br/>
-                            <span className="font-weight-bold mr-2">Removes</span>at least 90% or airborne contaminants 1 micron or 
+                            <span className="font-weight-bold mr-2">Removes</span>
+                            at least 90% or airborne contaminants 1 micron or
                             larger and from less than 75% to at least 95% of airborne contaminants from 0.3 to 1 micron
                         </div>
                         <div className="col">
-                            These filters trap as small as bacteria and tobacco smoke, as well as dust and particles the size of 
-                            aerosol spray drops and mold spores
+                            {"These filters trap as small as bacteria and tobacco smoke,"}
+                            {" as well as dust and particles the size of"}
+                            {"aerosol spray drops and mold spores"}
                         </div>
                     </div>
                     <AirFilterList />
                 </div>
-            )
+            );
         }
     }
-    returnBetterFilters(){
+    returnBetterFilters() {
         if (true) {
             return(
                 <div className="border mx-5 pb-3 air-filter-list-container mb-4">
@@ -290,20 +326,22 @@ class AirFilterPage extends React.Component {
                     <div className="row ml-1 mb-4">
                         <div className="col text-muted">
                             <span className="font-weight-bold mr-2">MERV ratings</span>range from 9 to 12<br/>
-                            <span className="font-weight-bold mr-2">Removes</span>from less than 50%  up to 80% of airborne contaminants
+                            <span className="font-weight-bold mr-2">Removes</span>
+                            from less than 50%  up to 80% of airborne contaminants
                             1 micron or larger
                         </div>
                         <div className="col">
-                            These filters trap as small as bacteria and tobacco smoke, as well as dust and particles the size of 
-                            aerosol spray drops and mold spores
+                            {"These filters trap as small as bacteria and tobacco smoke,"}
+                            {" as well as dust and particles the size of"}
+                            {"aerosol spray drops and mold spores"}
                         </div>
                     </div>
                     <AirFilterList />
                 </div>
-            )
+            );
         }
     }
-    returnGoodFilters(){
+    returnGoodFilters() {
         if (true) {
             return(
                 <div className="border mx-5 pb-3 air-filter-list-container mb-4">
@@ -313,7 +351,8 @@ class AirFilterPage extends React.Component {
                     <div className="row ml-1 mb-4">
                         <div className="col text-muted">
                             <span className="font-weight-bold mr-2">MERV ratings</span>range from 5 to 8<br/>
-                            <span className="font-weight-bold mr-2">Removes</span>20% to 85% of airborne contaminants from 3 to 10 microns.
+                            <span className="font-weight-bold mr-2">
+                            Removes</span>20% to 85% of airborne contaminants from 3 to 10 microns.
                         </div>
                         <div className="col">
                             These filters trap particles the size of aerosol spray drops and mold spores
@@ -321,18 +360,26 @@ class AirFilterPage extends React.Component {
                     </div>
                     <AirFilterList />
                 </div>
-            )
+            );
         }
     }
     returnList() {
-        if(true){
+        if (true) {
             return(
                 <React.Fragment>
                     <div className="display-4 font-weight-normal d-flex justify-content-center">
-                        We found 11 results for <span className="font-weight-bold ml-3">{this.state.shortSide} x {this.state.longSide} x {this.state.thickness}</span>
+                        We found 11 results for
+                        <span className="font-weight-bold ml-3">
+                          {this.state.shortSide} x {this.state.longSide} x {this.state.thickness}
+                        </span>
                     </div>
                     <div className="d-flex justify-content-center" >
-                        <span className="h2 text-primary bg-white font-weight-normal mt-1" onClick={this.startOver.bind(this)}>Start over</span>
+                      <span
+                        className="h2 text-primary bg-white font-weight-normal mt-1"
+                        onClick={this.startOver.bind(this)}
+                      >
+                        Start over
+                      </span>
                     </div>
                     <div className="mb-5">
                         {this.returnBestFilters()}
@@ -344,23 +391,29 @@ class AirFilterPage extends React.Component {
                         {this.returnGoodFilters()}
                     </div>
                 </React.Fragment>
-            )
+            );
         }
         return (
             <React.Fragment>
                 <div className="d-flex justify-content-center">
-                    <img alt="Three air filters displaying length, height, and width" src="https://www.searspartsdirect.com/etc/designs/searspartsdirect/clientlib_base/img/airFilterDimension.png"/>
+                    <img
+                      alt="Three air filters displaying length, height, and width"
+                      src={
+                        "https://www.searspartsdirect.com/etc/designs" +
+                        "/searspartsdirect/clientlib_base/img/airFilterDimension.png"
+                      }
+                    />
                 </div>
                 <div className="h4 font-weight-normal d-flex justify-content-center py-4 row">
                     <div className="mt-1 mr-2">
                         <InfoCircle width="25px" height="25px" fill="blue"/>
                     </div>
-                    Your air filter's actual dimensions might differ slightly from those printed on the filter. 
+                    Your air filter's actual dimensions might differ slightly from those printed on the filter.
                     <br/>
                     Order the size that's printed on the filter.
                 </div>
             </React.Fragment>
-        )
+        );
     }
 }
 
