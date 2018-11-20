@@ -3,7 +3,10 @@ import "./AirFilterPage.scss";
 import {
     AIR_FILTER_HEIGHTS,
     AIR_FILTER_THICKNESSES,
-    AIR_FILTER_WIDTHS
+    AIR_FILTER_WIDTHS,
+    BEST_FILTERS,
+    BETTER_FILTERS,
+    GOOD_FILTERS
 } from "./MockData"
 import InfoCircle from "./InfoCircle";
 import AirFilterList from "./AirFilterList";
@@ -26,6 +29,7 @@ class AirFilterPage extends React.Component {
         this.setState({
             shortSideSelected: false,
             longSideSelected: false,
+            thicknessSelected: false,
             shortSide: "in.",
             longSide: "in.",
             thickness: "in.",
@@ -292,12 +296,12 @@ class AirFilterPage extends React.Component {
             });
         }
     }
-    returnBestFilters() {
-        if (true) {
+    returnBestFilters(){
+        if (BEST_FILTERS.length > 0) {
             return(
                 <div className="border mx-5 pb-3 air-filter-list-container mb-4">
                     <div className="h1 pl-4">
-                        Best filters (7)
+                        Best filters ({BEST_FILTERS.length})
                     </div>
                     <div className="row ml-1 mb-4">
                         <div className="col text-muted">
@@ -312,17 +316,17 @@ class AirFilterPage extends React.Component {
                             {"aerosol spray drops and mold spores"}
                         </div>
                     </div>
-                    <AirFilterList />
+                    <AirFilterList filters={BEST_FILTERS}/>
                 </div>
             );
         }
     }
-    returnBetterFilters() {
-        if (true) {
+    returnBetterFilters(){
+        if (BETTER_FILTERS.length > 0) {
             return(
                 <div className="border mx-5 pb-3 air-filter-list-container mb-4">
                     <div className="h1 pl-4">
-                        Better filters (7)
+                        Better filters ({BETTER_FILTERS.length})
                     </div>
                     <div className="row ml-1 mb-4">
                         <div className="col text-muted">
@@ -337,17 +341,17 @@ class AirFilterPage extends React.Component {
                             {"aerosol spray drops and mold spores"}
                         </div>
                     </div>
-                    <AirFilterList />
+                    <AirFilterList filters={BETTER_FILTERS}/>
                 </div>
             );
         }
     }
-    returnGoodFilters() {
-        if (true) {
+    returnGoodFilters(){
+        if (GOOD_FILTERS.length > 0) {
             return(
                 <div className="border mx-5 pb-3 air-filter-list-container mb-4">
                     <div className="h1 pl-4">
-                        Good filters (7)
+                        Good filters ({GOOD_FILTERS.length})
                     </div>
                     <div className="row ml-1 mb-4">
                         <div className="col text-muted">
@@ -359,28 +363,20 @@ class AirFilterPage extends React.Component {
                             These filters trap particles the size of aerosol spray drops and mold spores
                         </div>
                     </div>
-                    <AirFilterList />
+                    <AirFilterList filters={GOOD_FILTERS}/>
                 </div>
             );
         }
     }
     returnList() {
-        if (true) {
+        if(this.state.thicknessSelected){
             return(
                 <React.Fragment>
                     <div className="display-4 font-weight-normal d-flex justify-content-center">
-                        We found 11 results for
-                        <span className="font-weight-bold ml-3">
-                          {this.state.shortSide} x {this.state.longSide} x {this.state.thickness}
-                        </span>
+                        We found {BEST_FILTERS.length + BETTER_FILTERS.length + GOOD_FILTERS.length} results for <span className="font-weight-bold ml-3">{this.state.shortSide} x {this.state.longSide} x {this.state.thickness}</span>
                     </div>
                     <div className="d-flex justify-content-center" >
-                      <span
-                        className="h2 text-primary bg-white font-weight-normal mt-1"
-                        onClick={this.startOver}
-                      >
-                        Start over
-                      </span>
+                        <span className="h2 text-primary bg-white font-weight-normal mt-1" onClick={this.startOver}>Start over</span>
                     </div>
                     <div className="mb-5">
                         {this.returnBestFilters()}

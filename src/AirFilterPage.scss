@@ -59,3 +59,9 @@ input[type=radio]:checked + .price-radios{
         display: none
     }
 }
+.page-selector {
+    &__arrow {
+        font-size: 4rem;
+        font-weight: 100;
+    }
+}
