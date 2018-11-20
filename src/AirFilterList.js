@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class AirFilterList extends React.Component {
     constructor(props) {
         super(props);
@@ -8,14 +7,14 @@ class AirFilterList extends React.Component {
             dropdowns: {},
         };
     }
-    render(){
+    render() {
         return(
             <React.Fragment>
                 {this.returnList()}
             </React.Fragment>
-        )
+        );
     }
-    returnList(){
+    returnList() {
         return(
             <div className="row mx-1">
                 {this.returnPart()}
@@ -23,9 +22,9 @@ class AirFilterList extends React.Component {
                 {this.returnPart()}
 
             </div>
-        )
+        );
     }
-    returnPart(){
+    returnPart() {
         return(
             <div className="col-6 px-4 mb-2">
                 <div className="row mx-0 border">
@@ -39,7 +38,9 @@ class AirFilterList extends React.Component {
                     </div>
                     <div className="col-8">
                         <div className="text-primary p-0">
-                            <span className="h3 font-weight-bold">Accumulair 6.88 x 15.88 x 2 Pleated Replacement Air Filter - MERV 13</span>
+                            <span className="h3 font-weight-bold">
+                            Accumulair 6.88 x 15.88 x 2 Pleated Replacement Air Filter - MERV 13
+                            </span>
                         </div>
                         <div className="h5 text-muted">
                             Part #1234
@@ -61,7 +62,8 @@ class AirFilterList extends React.Component {
                                         <span className="price-radios__checked mt-4 py-4">&#9673;</span>
                                         <span className="price-radios__not-checked mt-4 py-4">&#9711;</span>
                                         <span className="ml-2 font-weight-bold h2">$179.88</span>
-                                        <span className="h4 font-weight-normal ml-2">(12-pack)</span>                                    </label>
+                                        <span className="h4 font-weight-normal ml-2">(12-pack)</span>
+                                    </label>
                                 </div>
                             </div>
                             <div className="col-3 px-0 row align-items-end ">
@@ -82,7 +84,7 @@ class AirFilterList extends React.Component {
                                     <div className={`dropdown-content w-100 border ${this.state.dropdowns.shortSide}`}>
                                         <a
                                             className="font-weight-normal btn bg-white"
-                                            //onClick={this.handleChange.bind(this, "shortSide")}
+                                            // onClick={this.handleChange.bind(this, "shortSide")}
                                         >
                                             every 6 months
                                         </a>
@@ -94,7 +96,8 @@ class AirFilterList extends React.Component {
                             </div>
                         </div>
                         <div className="mb-2">
-                            Eligible for FREE standard shipping with subscription! <a className="btn p-0 mb-1 text-primary bg-white">Details</a>
+                            Eligible for FREE standard shipping with subscription!
+                            <a className="btn p-0 mb-1 text-primary bg-white">Details</a>
                         </div>
                     </div>
                 </div>
@@ -110,4 +113,5 @@ class AirFilterList extends React.Component {
         }
     }
 }
+
 export default AirFilterList;
