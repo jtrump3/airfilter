@@ -20,6 +20,7 @@ class AirFilterPage extends React.Component {
             longSideSelected: false,
             thicknessSelected: false,
         };
+        this.startOver = this.startOver.bind(this);
     }
     startOver() {
         this.setState({
@@ -376,7 +377,7 @@ class AirFilterPage extends React.Component {
                     <div className="d-flex justify-content-center" >
                       <span
                         className="h2 text-primary bg-white font-weight-normal mt-1"
-                        onClick={this.startOver.bind(this)}
+                        onClick={this.startOver}
                       >
                         Start over
                       </span>
